@@ -1,5 +1,12 @@
 # Reading the numbers
 
+> **Run `gsc.py sites` first and use exactly what it prints.** A domain property
+> (`sc-domain:example.com`) and a URL-prefix property (`https://www.example.com/`) are
+> different properties holding different data. First Rehab was documented for weeks as
+> `sc-domain:` and is actually the URL-prefix one. Querying the assumed string returns
+> nothing, which reads as "no search traffic" rather than "wrong property" — the most
+> dangerous kind of wrong, because it looks like an answer.
+
 Four metrics, and only two of them mean what people assume.
 
 | Metric | Reading |

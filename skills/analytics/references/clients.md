@@ -17,7 +17,7 @@ another client's numbers because theirs were unavailable.
 | Vercel teamId | `team_VWA1Ar7nCeuyUifvSyeFTT1T` |
 | Vercel project slug | `firstrehabnpb-zywd` |
 | Analytics enabled | **2026-07-21** — no data before this date |
-| GSC property | `sc-domain:firstrehabnpb.com` *(confirm with `gsc.py sites`)* |
+| GSC property | `https://www.firstrehabnpb.com/` — a **URL-prefix** property, verified 2026-08-14 |
 | Supabase project | "First Rehabilitation App" |
 | Lead tables | `intake_leads`, `job_applications` |
 | Socials | Instagram, Facebook, YouTube, TikTok, X, Google Business, LinkedIn business |
@@ -29,6 +29,26 @@ another client's numbers because theirs were unavailable.
 
 Those two windows **overlap by ~80%** of their days — not a clean before/after. Use
 `gsc.py compare`, which builds non-overlapping windows, for any new comparison.
+
+First clean comparison, from the API (90d to 2026-08-11 vs the prior 90d):
+
+| metric | previous | current | change |
+|---|---|---|---|
+| clicks | 249 | 314 | +26% |
+| impressions | 9,186 | 18,841 | +105% |
+| CTR | 2.71% | 1.67% | −1.04pp |
+| avg position | 14.8 | 19.1 | worse by 4.3 |
+
+Textbook new-pages-indexing shape. 8,878 of those impressions landed in the final 22 days.
+
+Location pages split in two, which is where the opportunity is:
+
+- Volume but stuck on page 3 — west-palm-beach (1,018 impr, pos 27.5),
+  palm-beach-gardens (615, 25.3), palm-beach (513, 25.2)
+- Nearly page 1 — juno-beach (169, pos 11.8), tequesta (83, pos 9.7)
+
+Old Wix URLs still carry ~4,150 impressions / 74 clicks (`/about` alone outranks the new
+`/about.html`). The 301s are catching it. **Do not remove those redirects.**
 
 Notes:
 - Speed Insights is deliberately OFF (usage-billed). Only Web Analytics is available.
