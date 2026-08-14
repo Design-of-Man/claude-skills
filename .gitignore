@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.DS_Store
+# never commit Search Console keys
+*service-account*.json
+gsc-key*.json

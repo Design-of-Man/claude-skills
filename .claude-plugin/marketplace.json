@@ -1,0 +1,11 @@
+{
+  "name": "dom-skills",
+  "owner": { "name": "The Design of Man" },
+  "plugins": [
+    {
+      "name": "dom-skills",
+      "source": "./",
+      "description": "Custom skills for The Design of Man: analytics, search-console, skill-forge, session-hygiene"
+    }
+  ]
+}
