@@ -8,7 +8,7 @@
 # from starting. Missing skills are recoverable; a blocked session is not.
 set -u
 
-REPO="${SKILLS_REPO:-https://github.com/nicholasbkashuba-lab/claude-skills}"
+REPO="${SKILLS_REPO:-https://github.com/Design-of-Man/claude-skills}"
 DEST="${HOME}/.claude/skills"
 
 if [ -d "$(dirname "$0")/skills" ]; then

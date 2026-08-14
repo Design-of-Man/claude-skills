@@ -15,7 +15,7 @@ Paste into the Claude Code cloud environment **Setup script**
 (claude.ai/code → ☁ environment chip → gear → Setup script):
 
 ```bash
-git clone --depth 1 https://github.com/nicholasbkashuba-lab/claude-skills \
+git clone --depth 1 https://github.com/Design-of-Man/claude-skills \
   /tmp/claude-skills 2>/dev/null \
   && mkdir -p ~/.claude/skills \
   && cp -r /tmp/claude-skills/skills/* ~/.claude/skills/ || true

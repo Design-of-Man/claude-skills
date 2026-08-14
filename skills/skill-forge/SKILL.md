@@ -13,7 +13,7 @@ Handing over a zip and stopping is the failure mode this skill exists to prevent
 | Location | Reaches | Who can write it |
 |---|---|---|
 | `~/.claude/skills/<name>/` | current session only (ephemeral) | **me, instantly** |
-| `nicholasbkashuba-lab/claude-skills` repo | every future session, every repo | **me, via git push** |
+| `Design-of-Man/claude-skills` repo | every future session, every repo | **me, via git push** |
 | claude.ai account Skills | every surface incl. mobile & chat | **only Nick, by hand** |
 
 The repo is the automation path. A cloud environment **setup script** clones it into

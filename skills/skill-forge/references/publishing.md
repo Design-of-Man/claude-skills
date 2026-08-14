@@ -23,7 +23,7 @@ A **setup script** on the cloud environment runs before Claude starts, in every 
 session — any repo, the mobile app, and scheduled routines:
 
 ```bash
-git clone --depth 1 https://github.com/nicholasbkashuba-lab/claude-skills \
+git clone --depth 1 https://github.com/Design-of-Man/claude-skills \
   /tmp/claude-skills 2>/dev/null \
   && mkdir -p ~/.claude/skills \
   && cp -r /tmp/claude-skills/skills/* ~/.claude/skills/ || true
@@ -49,6 +49,28 @@ git add skills/<name> && git commit -m "Add <name> skill" && git push
 Then copy into `~/.claude/skills/<name>/` as well so it is usable in the current session
 without waiting for a new one.
 
+### Pushing is owner-tier-bound — consuming is not
+
+A session is pinned to the GitHub owner of the repo it opened with, and `add_repo`
+refuses cross-tier adds:
+
+```
+cross-tier adds are not supported: requested "design-of-man/claude-skills"
+but session already has repos from owner(s) [nicholasbkashuba-lab]
+```
+
+So the skills repo can be pushed to from a **Design of Man** session (client work already
+lives there: `Design-of-Man/sundial`, `/regenortho`) but **not** from a First Rehab
+session, which is pinned to `nicholasbkashuba-lab`.
+
+This does **not** affect using skills. Cloning a public repo needs no attachment at all —
+verified by cloning both an unrelated third-party public repo and this one from a session
+pinned to a different owner. Only pushing is restricted.
+
+When authoring in a First Rehab session: write the skill, install it to
+`~/.claude/skills/` so it works immediately, commit it locally, and say plainly that the
+push has to happen from a Design of Man session. Do not claim it was published.
+
 ## Alternative — the per-repo plugin route
 
 If the setup script is unavailable, a repo's `.claude/settings.json` can auto-install a
@@ -57,7 +79,7 @@ marketplace at session start:
 ```json
 {
   "extraKnownMarketplaces": {
-    "dom-skills": { "source": { "source": "github", "repo": "nicholasbkashuba-lab/claude-skills" } }
+    "dom-skills": { "source": { "source": "github", "repo": "Design-of-Man/claude-skills" } }
   },
   "enabledPlugins": { "dom-skills@dom-skills": true }
 }
