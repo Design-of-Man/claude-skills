@@ -60,6 +60,19 @@ to the session that subscribed.
 **Do not roll** for a brief tangent. Two topics in one session beats two sessions for one
 topic.
 
+**Roll on size, too — around 40–50M cumulative tokens**, or as soon as a client build has
+shipped its PR, whichever comes first. Check with `list_sessions` (`mine: true`) and sum
+`external_metadata.usage`.
+
+The reason is that a session gets more expensive the longer it runs. Roughly 99% of token
+spend is context being re-read, not output being generated, so cost per turn scales with
+transcript length — the same work costs steadily more the later in a session it happens. One
+audited session reached 171M tokens; a fresh session plus a good handoff brief would have done
+the back half of that work for a fraction of it.
+
+This is a budget, not a deadline. The "ask first when threads are open" rule above still wins
+— rolling mid-task genuinely does cost more than it saves.
+
 ## Notes
 
 - Archiving is reversible (`unarchive_session`); creation is not undoable — prefer
