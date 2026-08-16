@@ -12,14 +12,33 @@ Two numbers decide the whole diagnosis. Get them first, in this order:
 2. **Enabled triggers, and whether any fire into a persistent session.** This is where
    runaway burn hides.
 
-## Trap: the burn is invisible in the session list
+## Trap: a big trigger count is not a big bill — measure it, don't assume
 
-`list_sessions` returns **interactive sessions only**. Trigger-fired runs are excluded.
+The instinct is to see hundreds of firings and call it the cause. Check the arithmetic before
+saying so. An audit of 590 check-in firings put them at **35–70M tokens, under 4%** of a 1.96B
+19-day total. Real waste, worth killing, and nowhere near the headline.
 
-An account can have hundreds of scheduled firings per week that appear nowhere in the session
-list and contribute nothing to its usage totals. A spike went unnoticed for weeks on exactly
-this. **Never conclude "usage looks normal" from `list_sessions` alone** — always cross-check
-`list_triggers`.
+**Persistent-session firings are measurable**, because the session they wake is an ordinary
+interactive session that appears in `list_sessions` with its usage attached. Isolate the
+per-fire cost from the sessions where check-ins are nearly all that happened — high fire
+count, low total:
+
+```
+Sundial          96 fires    5.7M total  →  59K per fire
+Legends Radio   104 fires   12.3M total  → 118K per fire
+```
+
+Then multiply by total fires. Those totals still include the session's few interactive turns,
+so the result is an upper bound. Do **not** take a per-fire figure from a session that also did
+real work — a session with 2 fires and 168M tokens yields a meaningless 84M "per fire".
+
+Only **fresh-session** trigger runs (`create_new_session_on_fire`) are excluded from
+`list_sessions`. Those genuinely are invisible and must be reasoned about from the trigger's
+prompt and cadence rather than measured.
+
+**The mechanism to check, not assume:** a check-in bound to a *small* session stays cheap
+however often it fires. The expensive version is one bound to a session that has grown large.
+Look at the session's total before claiming a reload cost.
 
 ## Trap: both list calls blow the tool-result limit
 
