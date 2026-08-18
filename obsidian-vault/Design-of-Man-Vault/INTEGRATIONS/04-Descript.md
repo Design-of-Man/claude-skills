@@ -38,7 +38,7 @@ Record  →  import media into a Descript project
         →  export transcript (markdown / srt)
              ↓                        ↓
       blog + FAQ content        short-form clips
-   [[../CONTENT-LIBRARY/01-Clinic-Content]]   →  [[03-Post-Bridge]]
+   [[../CONTENT-LIBRARY/01-Clinic-Content/README|Clinic Content Library]]   →  [[03-Post-Bridge]]
 ```
 
 | Step | Tool surface | Notes |
@@ -92,7 +92,7 @@ The drive is shared with the clinic, so the usual solo-account assumptions do no
 ## Related
 
 - [[../CLINIC/02-Podcast-Schedule]] — the publishing calendar
-- [[../CONTENT-LIBRARY/01-Clinic-Content]] — where transcripts become written content
+- [[../CONTENT-LIBRARY/01-Clinic-Content/README|Clinic Content Library]] — where transcripts become written content
 - [[03-Post-Bridge]] — where clips get scheduled
 - [[13-Higgsfield-ViewMax]] — for generated media, as opposed to recorded
 - [[00-Integration-Overview]]

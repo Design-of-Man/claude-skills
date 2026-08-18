@@ -26,7 +26,7 @@ Reports are informational, not transactional, so there's no per-run approval gat
 
 ## Integrations Used
 - [[../INTEGRATIONS/01-Google-Workspace]] — Search Console, Analytics, Drive archive
-- [[../INTEGRATIONS/09-QuickBooks-Online]] — billing-status context
+- [[../INTEGRATIONS/05-QuickBooks-Online]] — billing-status context
 
 ## Status
 **Planning.** Spec is agreed; the PDF pipeline isn't built yet.

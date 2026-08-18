@@ -14,7 +14,7 @@ Watches inbound client email and Slack for support requests, logs every one as a
 Daily (planned). See [[../AUTOMATIONS/05-Daily-Support-Check]].
 
 ## Inputs
-- The shared support inbox — clients email in through whichever domain they were onboarded on, so this spans both [[../INTEGRATIONS/01-Google-Workspace|Google Workspace]] and [[../INTEGRATIONS/11-Microsoft-365|Microsoft 365]] mailboxes
+- The shared support inbox — clients email in through whichever domain they were onboarded on, so this spans both [[../INTEGRATIONS/01-Google-Workspace|Google Workspace]] and [[../INTEGRATIONS/10-Microsoft-365|Microsoft 365]] mailboxes
 - Slack DMs sent directly to the agency
 
 ## Outputs (planned)
@@ -27,7 +27,7 @@ Logging and routing run unattended — no client sees that step. Any reply that 
 
 ## Integrations Used
 - [[../INTEGRATIONS/01-Google-Workspace]]
-- [[../INTEGRATIONS/11-Microsoft-365]]
+- [[../INTEGRATIONS/10-Microsoft-365]]
 - [[../INTEGRATIONS/08-Slack]] — `#alerts`
 
 ## Status

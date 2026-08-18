@@ -9,7 +9,7 @@ updated: 2026-08-18
 Running log of tools that were evaluated and **not** adopted. Nothing has
 been formally rejected yet as of 2026-08-18 — every tool that's been
 through evaluation so far has either been integrated
-([[02-Integrated-Tools]]) or is still sitting in the open queue
+([[02-Integrated-Tools/00-Overview|Integrated Tools]]) or is still sitting in the open queue
 ([[01-Repos-to-Evaluate]]). This file exists as the destination for the
 first real rejection, not as a placeholder for one that hasn't happened.
 

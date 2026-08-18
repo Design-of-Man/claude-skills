@@ -15,7 +15,7 @@ specific reason to spend evaluation time on them.
 Reviewed monthly by the Skills Radar Agent (see
 [[../AGENTS/Skills-Radar-Agent]] and the `skill-scout` skill) — see
 [[Monthly-Scout-Results/2026-08-scout]] for the latest run. Anything that
-gets adopted moves to [[02-Integrated-Tools]]; anything evaluated and
+gets adopted moves to [[02-Integrated-Tools/00-Overview|Integrated Tools]]; anything evaluated and
 passed on moves to [[03-Rejected-Tools]] with a reason.
 
 ## What belongs here
@@ -33,7 +33,7 @@ loses time or money today:
 ## Already Triaged
 
 These have been evaluated and moved off the watchlist — see
-[[02-Integrated-Tools]] for the full record on each.
+[[02-Integrated-Tools/00-Overview|Integrated Tools]] for the full record on each.
 
 | Tool | Lane | Verdict | Date | Detail |
 |------|------|---------|------|--------|
@@ -62,6 +62,6 @@ status.
 2. When there's a concrete reason to spend time on it, promote it to
    [[01-Repos-to-Evaluate]] with a specific "why this might matter" tied
    to an actual agency need — not just "looks popular."
-3. After evaluation: adopted → [[02-Integrated-Tools]]. Passed on →
+3. After evaluation: adopted → [[02-Integrated-Tools/00-Overview|Integrated Tools]]. Passed on →
    [[03-Rejected-Tools]] with a reason. Still unresolved → stays here,
-   or rolls into next month's [[Monthly-Scout-Results]] entry.
+   or rolls into next month's [[Monthly-Scout-Results/2026-08-scout|Monthly Scout Results]] entry.

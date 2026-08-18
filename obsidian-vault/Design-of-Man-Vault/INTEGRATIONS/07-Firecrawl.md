@@ -140,4 +140,4 @@ rather than a feeling.
 - [[../AGENTS/02-Sales-Outreach-Agent]]
 - [[../AGENTS/01-SEO-Audit-Agent]]
 - [[00-Integration-Overview]] — resilience notes
-- [[../SKILLS-RADAR/02-Integrated-Tools]]
+- [[../SKILLS-RADAR/02-Integrated-Tools/00-Overview|Integrated Tools]]

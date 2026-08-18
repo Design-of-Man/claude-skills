@@ -149,7 +149,7 @@ upside over calling Claude directly.
 - [ ] Tested
 - [ ] Live
 
-Tracked in [[../SKILLS-RADAR/02-Integrated-Tools]] and
+Tracked in [[../SKILLS-RADAR/02-Integrated-Tools/00-Overview|Integrated Tools]] and
 [[../BUSINESS/05-Decisions-Log]].
 
 ---

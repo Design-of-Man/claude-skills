@@ -9,7 +9,7 @@ updated: 2026-08-18
 Running queue of specific repos/tools slated for hands-on evaluation, in
 priority order. This is the working queue that sits between the broad
 watchlist ([[00-Trending-Tools]]) and a decision (either
-[[02-Integrated-Tools]] or [[03-Rejected-Tools]]).
+[[02-Integrated-Tools/00-Overview|Integrated Tools]] or [[03-Rejected-Tools]]).
 
 Each entry needs a **specific** "why this might matter" tied to a real
 agency need — not a star count or a hype signal. If a tool can't clear
@@ -32,11 +32,11 @@ that bar, it stays on [[00-Trending-Tools]] instead of landing here.
   and [[02-Integrated-Tools/Matt-Pocock-Skills]].
 - "Owner" and "Status" columns are here so this stays a working queue, not
   a static list — update them as evaluation actually starts.
-- When an item resolves, move it to [[02-Integrated-Tools]] (adopted) or
+- When an item resolves, move it to [[02-Integrated-Tools/00-Overview|Integrated Tools]] (adopted) or
   [[03-Rejected-Tools]] (passed on, with a reason) and remove the row
   here, or strike it through with a link to the outcome.
 - Anything added directly to `claude-skills` without going through this
   queue first (see [[02-Integrated-Tools/Domain-Migration]], added
   2026-08-18 straight from a real gap found in session review) should
-  still get a retroactive entry in [[02-Integrated-Tools]] so the radar
+  still get a retroactive entry in [[02-Integrated-Tools/00-Overview|Integrated Tools]] so the radar
   reflects reality — the queue is a planning tool, not a gate.

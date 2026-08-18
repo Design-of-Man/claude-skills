@@ -20,7 +20,7 @@ listed.
 | Customer acquisition cost (CAC) | $X | Total sales/outreach cost over a period (Sales Outreach Agent tool/API spend from [[03-Expenses]], plus any Nick/Cam hours spent on approvals and closing per [[06-Capacity-Planning]]) divided by the number of new clients closed in that period |
 | Revenue per client | $X | Monthly recurring revenue pulled from [[../INTEGRATIONS/05-QuickBooks-Online]], divided by active client count from [[../CLIENTS/00-Active-Clients]]. Note this is a *blended* figure across the tiers described in [[02-Pricing-Model]], not a single fixed price |
 | Profit margin | 70% | (Total revenue − total expenses) ÷ total revenue, for a given period. Revenue from [[../INTEGRATIONS/05-QuickBooks-Online]]; expenses from [[03-Expenses]] (excluding the clinic-billed Descript line, per that note) |
-| Time to build a site | 8 hours | Logged hours from build kickoff to first successful deploy on the [[../TEMPLATES-BUILDS/00-Next.js-Shell\|Next.js shell]], tracked per client in that client's file under [[../CLIENTS/00-Active-Clients]] or in the relevant [[../AGENTS/Execution-Logs]] entry |
+| Time to build a site | 8 hours | Logged hours from build kickoff to first successful deploy on the [[../TEMPLATES-BUILDS/00-Next.js-Shell\|Next.js shell]], tracked per client in that client's file under [[../CLIENTS/00-Active-Clients]] or in the relevant [[../AGENTS/Execution-Logs/00-Index|Execution Logs]] entry |
 | Time to launch | 10 hours | Logged hours from build kickoff to the site going live on its real domain — first deploy time (above) plus everything through DNS cutover per [[../TEMPLATES-BUILDS/06-Deployment-Checklist]] (and [[../TEMPLATES-BUILDS/07-Domain-Migration-Checklist]] for migration jobs) |
 
 ## Why These Six

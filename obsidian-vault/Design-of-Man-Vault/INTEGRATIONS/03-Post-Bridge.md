@@ -26,7 +26,7 @@ scheduling surface with per-platform accounts, which is what makes a two-person 
 to run social for ten clients.
 
 It is a **scheduler**, not a content system. The content lives in the vault and in
-[[../CONTENT-LIBRARY/04-Social-Content-Archive]]. Post Bridge holds the queue.
+[[../CONTENT-LIBRARY/04-Social-Content-Archive/README|Social Content Archive]]. Post Bridge holds the queue.
 
 ---
 
@@ -85,5 +85,5 @@ scheduled, never published immediately.** Anything published on creation skips b
 - [[../AUTOMATIONS/04-Sunday-Preview-Email]] — the client-facing gate
 - [[13-Higgsfield-ViewMax]] — where the media comes from
 - [[08-Slack]] — `#social-posts` review channel
-- [[../CONTENT-LIBRARY/04-Social-Content-Archive]]
+- [[../CONTENT-LIBRARY/04-Social-Content-Archive/README|Social Content Archive]]
 - [[00-Integration-Overview]]

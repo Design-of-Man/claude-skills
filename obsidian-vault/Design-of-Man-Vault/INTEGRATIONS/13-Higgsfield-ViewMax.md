@@ -76,7 +76,7 @@ Both tools charge credits and both support batch generation. Batching is efficie
 a wrong prompt is efficiently expensive. Estimate cost, generate one, check it, then batch.
 
 ### Media is archived, not left in the tool
-Approved assets go to [[../CONTENT-LIBRARY/04-Social-Content-Archive]]. Assets that live only
+Approved assets go to [[../CONTENT-LIBRARY/04-Social-Content-Archive/README|Social Content Archive]]. Assets that live only
 inside a vendor account are assets we lose when a subscription lapses — and cannot reuse
 when a client asks for "that one from March."
 
@@ -120,6 +120,6 @@ ethics rule — see [[../CLINIC/00-Clinic-Overview]] for the clinic-side content
 - [[03-Post-Bridge]] — where approved media gets scheduled
 - [[../AUTOMATIONS/03-Wednesday-Content-Gen]] — the pipeline this feeds
 - [[../AGENTS/04-Design-Graphics-Agent]]
-- [[../CONTENT-LIBRARY/04-Social-Content-Archive]]
+- [[../CONTENT-LIBRARY/04-Social-Content-Archive/README|Social Content Archive]]
 - [[04-Descript]] — recorded video, as opposed to generated
 - [[00-Integration-Overview]]
