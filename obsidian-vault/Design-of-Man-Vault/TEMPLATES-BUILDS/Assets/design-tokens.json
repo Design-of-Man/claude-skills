@@ -1,0 +1,183 @@
+{
+  "$schema": "design-of-man/design-tokens/v1",
+  "name": "design-of-man-shell-tokens",
+  "description": "Starter design tokens for a new client build on the Next.js shell. Primitive values are placeholders — swap them for the client's actual palette (see TEMPLATES-BUILDS/03-Color-Palettes.md) before shipping. Semantic tokens are what components consume; tailwind.config.ts reads this file directly and maps semantic tokens to CSS variables.",
+  "updated": "2026-08-18",
+
+  "primitives": {
+    "color": {
+      "teal": {
+        "50": "#EEF6F6",
+        "100": "#D8E9EA",
+        "200": "#B3D3D6",
+        "300": "#82B6BB",
+        "400": "#4F949B",
+        "500": "#2F757D",
+        "600": "#1F5D64",
+        "700": "#194B51",
+        "800": "#153D42",
+        "900": "#123338"
+      },
+      "slate": {
+        "50": "#F7F8F9",
+        "100": "#EEF0F2",
+        "200": "#DEE2E6",
+        "300": "#C3CAD1",
+        "400": "#9AA5AF",
+        "500": "#717E8A",
+        "600": "#54606B",
+        "700": "#3F4851",
+        "800": "#2B3138",
+        "900": "#1A1E23"
+      },
+      "terracotta": {
+        "50": "#FBF1EC",
+        "100": "#F4DACB",
+        "200": "#E9B79A",
+        "300": "#DC8F67",
+        "400": "#CF6E42",
+        "500": "#BC5528",
+        "600": "#9C441F",
+        "700": "#7C371A",
+        "800": "#622C16",
+        "900": "#4E2412"
+      },
+      "amber": {
+        "50": "#FDF6E9",
+        "100": "#F9E7BE",
+        "200": "#F3D089",
+        "300": "#ECB84F",
+        "400": "#E5A428",
+        "500": "#C98816",
+        "600": "#A66C10",
+        "700": "#83550F",
+        "800": "#69440F",
+        "900": "#54370D"
+      },
+      "white": "#FFFFFF",
+      "black": "#0B0D0E",
+      "success": { "500": "#2F8F5B", "100": "#DDF0E6" },
+      "warning": { "500": "#C98816", "100": "#F9E7BE" },
+      "danger":  { "500": "#C4432E", "100": "#F7DCD7" },
+      "info":    { "500": "#2F757D", "100": "#D8E9EA" }
+    },
+
+    "spacing": {
+      "0": "0px",
+      "1": "4px",
+      "2": "8px",
+      "3": "12px",
+      "4": "16px",
+      "6": "24px",
+      "8": "32px",
+      "12": "48px",
+      "16": "64px",
+      "24": "96px"
+    },
+
+    "radius": {
+      "none": "0px",
+      "sm": "4px",
+      "md": "8px",
+      "lg": "12px",
+      "xl": "20px",
+      "full": "9999px"
+    },
+
+    "shadow": {
+      "sm": "0 1px 2px 0 rgba(16, 20, 24, 0.06)",
+      "md": "0 2px 6px 0 rgba(16, 20, 24, 0.08), 0 1px 2px 0 rgba(16, 20, 24, 0.06)",
+      "lg": "0 8px 20px -4px rgba(16, 20, 24, 0.12), 0 2px 6px -2px rgba(16, 20, 24, 0.08)",
+      "xl": "0 16px 40px -8px rgba(16, 20, 24, 0.16)"
+    },
+
+    "font": {
+      "family": {
+        "body": "'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif",
+        "display": "'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif",
+        "mono": "'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace"
+      },
+      "weight": {
+        "regular": 400,
+        "medium": 500,
+        "semibold": 600,
+        "bold": 700,
+        "black": 900
+      },
+      "size": {
+        "xs":  { "value": "0.75rem",  "lineHeight": "1.4" },
+        "sm":  { "value": "0.875rem", "lineHeight": "1.5" },
+        "base":{ "value": "1rem",     "lineHeight": "1.6" },
+        "lg":  { "value": "1.125rem", "lineHeight": "1.6" },
+        "xl":  { "value": "1.25rem",  "lineHeight": "1.4" },
+        "2xl": { "value": "1.563rem", "lineHeight": "1.3" },
+        "3xl": { "value": "1.953rem", "lineHeight": "1.25" },
+        "4xl": { "value": "2.441rem", "lineHeight": "1.15" },
+        "5xl": { "value": "3.052rem", "lineHeight": "1.1" }
+      }
+    },
+
+    "breakpoint": {
+      "sm": "640px",
+      "md": "768px",
+      "lg": "1024px",
+      "xl": "1280px"
+    }
+  },
+
+  "semantic": {
+    "color": {
+      "background":      { "value": "{primitives.color.white}" },
+      "surface":         { "value": "{primitives.color.slate.50}" },
+      "surface-raised":  { "value": "{primitives.color.white}" },
+      "foreground":      { "value": "{primitives.color.slate.900}" },
+      "foreground-muted":{ "value": "{primitives.color.slate.600}" },
+      "border":          { "value": "{primitives.color.slate.200}" },
+
+      "primary":         { "value": "{primitives.color.teal.600}", "note": "PLACEHOLDER — replace with client primary, see TEMPLATES-BUILDS/03-Color-Palettes.md" },
+      "primary-hover":   { "value": "{primitives.color.teal.700}" },
+      "primary-surface": { "value": "{primitives.color.teal.50}" },
+
+      "secondary":       { "value": "{primitives.color.slate.100}", "note": "PLACEHOLDER — replace with client secondary" },
+      "secondary-hover": { "value": "{primitives.color.slate.200}" },
+
+      "accent":          { "value": "{primitives.color.terracotta.500}", "note": "PLACEHOLDER — replace with client accent. Reserve for conversion elements (BookingCta) only." },
+      "accent-hover":    { "value": "{primitives.color.terracotta.600}" },
+      "accent-foreground": { "value": "{primitives.color.white}" },
+
+      "success": { "value": "{primitives.color.success.500}" },
+      "warning": { "value": "{primitives.color.warning.500}" },
+      "danger":  { "value": "{primitives.color.danger.500}" },
+      "info":    { "value": "{primitives.color.info.500}" }
+    },
+
+    "spacing": {
+      "component-padding-sm": { "value": "{primitives.spacing.4}" },
+      "component-padding-lg": { "value": "{primitives.spacing.6}" },
+      "section-padding-mobile": { "value": "{primitives.spacing.12}" },
+      "section-padding-desktop": { "value": "{primitives.spacing.16}" },
+      "section-gap-major": { "value": "{primitives.spacing.24}" }
+    },
+
+    "radius": {
+      "button": { "value": "{primitives.radius.md}" },
+      "card":   { "value": "{primitives.radius.lg}" },
+      "input":  { "value": "{primitives.radius.sm}" },
+      "avatar": { "value": "{primitives.radius.full}" }
+    },
+
+    "shadow": {
+      "card":     { "value": "{primitives.shadow.sm}" },
+      "dropdown": { "value": "{primitives.shadow.md}" },
+      "modal":    { "value": "{primitives.shadow.lg}" }
+    },
+
+    "font": {
+      "body":    { "family": "{primitives.font.family.body}",    "weight": "{primitives.font.weight.regular}" },
+      "heading": { "family": "{primitives.font.family.display}", "weight": "{primitives.font.weight.bold}" },
+      "cta":     { "family": "{primitives.font.family.display}", "weight": "{primitives.font.weight.semibold}" }
+    }
+  },
+
+  "usage_note": "tailwind.config.ts consumes semantic.* as CSS custom properties (--color-primary, --space-6, --radius-card, etc). Components reference only semantic tokens, never primitives directly. To re-skin for a new client: swap the primitive.color values (or repoint semantic.color.primary/secondary/accent at different primitive scales), keep spacing/radius/shadow scales as-is unless the client's vertical calls for a deliberate departure (see TEMPLATES-BUILDS/01-Design-System.md)."
+}
