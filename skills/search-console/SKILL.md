@@ -35,6 +35,10 @@ If `gsc.py sites` returns an empty list, the key is fine and **step 4 was skippe
 that client. That is the failure mode by a wide margin — the key authenticates perfectly
 and reads nothing. Say so directly rather than debugging the key.
 
+If `gsc.py sites` returns **only `firstrehabnpb.com`**, that is the opposite problem: the
+container is holding the superseded single-client key. See Credentials below — do not treat it
+as missing property access.
+
 Adding a client later:
 
 > Search Console → select property → Settings → Users and permissions → Add user →
@@ -79,6 +83,38 @@ have actually produced wrong client-facing conclusions.
 
 ## Credentials
 
+### The canonical key — check this before reporting any access problem
+
+The agency's service account is:
+
+```
+claude-gsc-reader@designofman-seo.iam.gserviceaccount.com     (project: designofman-seo)
+```
+
+Every Design of Man client property is already shared with this account. If a session is
+using it and a property still will not read, that is a real access gap worth raising.
+
+**`claude-gsc-reader@firstrehabnpb-seo.iam.gserviceaccount.com` (project `firstrehabnpb-seo`)
+is SUPERSEDED.** It was the original single-client key and it can read only
+`firstrehabnpb.com`. It still ships inside older Claude Code cloud container images at
+`~/.config/gsc/service-account.json`, so a fresh cloud session will pick it up and appear to
+have working credentials.
+
+So before saying a client property is inaccessible, print which key is loaded:
+
+```bash
+python3 -c "import json;d=json.load(open('$HOME/.config/gsc/service-account.json'));print(d['project_id'])"
+```
+
+If that prints `firstrehabnpb-seo`, **the key is stale — that is the whole problem.** Do not
+report it as missing property access and do not ask the owner to re-grant anything; the grants
+already exist on the `designofman-seo` account. Say the container has the old key and needs the
+current one supplied via `$GSC_SERVICE_ACCOUNT_JSON`.
+
+This has now cost several sessions of the owner repeating himself. Check the project id first.
+
+### Handling the key
+
 The key is a **secret**. It is read-only and revocable, but treat it like a password.
 
 - Read from `$GSC_SERVICE_ACCOUNT_JSON` (raw JSON or a path), `--key`, or
@@ -109,6 +145,7 @@ failing cleanly.
 |---|---|
 | `no service-account credentials found` | No key configured. Setup not done. |
 | Empty property list | Step 4 skipped — key is not a user on the property. |
+| Only `firstrehabnpb.com` is readable | **Stale key.** Container has the superseded `firstrehabnpb-seo` key. Supply the `designofman-seo` key via `$GSC_SERVICE_ACCOUNT_JSON`. Not an access-grant problem. |
 | `account not found` | The `client_email` no longer exists; stale or deleted key. |
 | `invalid_client` / `unauthorized_client` | Search Console API not enabled on the Cloud project. |
 | `403` on a query | Not a user on that property, or wrong property. |
