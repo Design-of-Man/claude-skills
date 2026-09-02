@@ -34,6 +34,8 @@ Missing skills are recoverable; a session that won't start is not.
 | `session-hygiene` | "let's work on Sundial now", "clean up my sessions" |
 | `site-ingest` | "pull their site", "what do they already have" |
 | `skill-scout` | "what should we be using" — find capabilities worth adding |
+| `book-to-skill` | convert a book/PDF/EPUB into a structured skill extracting its frameworks |
+| `unlazy` | "do not stop until it is done" — acceptance gates and completion discipline for long tasks |
 
 **Craft**
 
@@ -46,6 +48,9 @@ Missing skills are recoverable; a session that won't start is not.
 | `web-accessibility` | WCAG 2.2 audits, screen readers, keyboard nav |
 | `core-web-vitals` | LCP, INP, CLS, layout shift |
 | `owasp-security` | security review, auth, input handling |
+| `email-html-mjml` | build a responsive HTML email template that survives Outlook/Gmail rendering |
+| `hallmark` | anti-AI-slop design skill for greenfield pages, audits, redesigns |
+| `archify` | architecture, workflow, sequence, and state diagrams as explorable HTML |
 
 **Marketing**
 
@@ -55,6 +60,19 @@ Missing skills are recoverable; a session that won't start is not.
 | `marketing-copy-editing` | editing and refreshing existing copy |
 | `storybrand-messaging` | brand message, one-liner, homepage copy |
 | `avoid-ai-writing` | "make this sound less like AI" |
+| `seo-audit` | "my SEO is bad", "why am I not ranking" — technical SEO audits |
+| `schema` | schema markup, JSON-LD, structured data, rich snippets |
+| `copywriting` | write or rewrite homepage/landing/pricing page copy |
+| `cro` | "this page isn't converting" — conversion rate optimization |
+| `programmatic-seo` | template pages at scale — directory/location/comparison pages |
+| `competitors` | competitor comparison and "vs"/"alternative" pages |
+| `site-architecture` | sitemap, page hierarchy, navigation, internal linking |
+| `marketing-analytics` | set up or audit GA4/GTM tracking and measurement |
+| `ab-testing` | plan and run A/B tests and growth experimentation programs |
+| `cold-email` | B2B cold outreach and follow-up sequences |
+| `emails` | lifecycle/drip/nurture email sequences |
+| `social` | LinkedIn/Twitter/TikTok content, scheduling, social listening |
+| `ads` | Google/Meta/LinkedIn paid ad campaigns and targeting |
 
 **Thinking & media**
 
@@ -64,6 +82,7 @@ Missing skills are recoverable; a session that won't start is not.
 | `s4h-decision-premortem-analysis` | "what could go wrong", pre-mortem |
 | `watch` | analyze a video from a link or file |
 | `video-brief` | turn `/watch` output into a structured brief |
+| `video-shotcraft` | turn a webpage/frontend into a cinematic product video (Remotion) |
 
 ## Adding a skill
 
