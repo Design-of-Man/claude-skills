@@ -1,6 +1,6 @@
 ---
 name: static-site-forge
-description: Build a static client site from one Python generator file as the single source of truth, and verify every page in a real browser on every build — screenshots, axe, JS errors, overflow. Use when starting or rebuilding a static site, when pages have drifted out of sync with each other, when a palette or site-wide token change is needed, or when live third-party data has to be exercised without network access. Triggers on "build the site", "new client site", "site generator", "single source of truth", "the pages don't match", "that's wrong on one page but right on another", "flip the palette", "make it light", "dark mode", "design tokens", "verify every page", "axe every page", "screenshot every page", "check it in a browser", "test the feed offline", "mock the API", "is the contrast ok". For the client delivery pipeline — scope preflight, ship check, client artifact — see client-site; this is the engineering layer beneath it. For auditing a site someone else built, see web-accessibility.
+description: Build a static client site from one Python generator file as the single source of truth, and verify every page in a real browser on every build — screenshots, axe, JS errors, overflow. Use when starting or rebuilding a static site, when pages have drifted out of sync with each other, when a palette or site-wide token change is needed, or when live third-party data has to be exercised without network access. Triggers on "build the site", "new client site", "site generator", "single source of truth", "the pages don't match", "that's wrong on one page but right on another", "flip the palette", "make it light", "dark mode", "design tokens", "verify every page", "axe every page", "screenshot every page", "check it in a browser", "test the feed offline", "mock the API", "is the contrast ok", "stop asking me questions", "just decide", "it keeps asking me things", "don't ask, just build". For the client delivery pipeline — scope preflight, ship check, client artifact — see client-site; this is the engineering layer beneath it. For auditing a site someone else built, see web-accessibility.
 ---
 
 # Static site forge
@@ -15,6 +15,36 @@ is never to reconcile them. It is to delete one.
 **Look at every page in a browser, every build.** Not tests in the CI sense —
 *looking*. Reasoning about CSS does not tell you the nav overflows at every
 desktop width. A `scrollWidth > clientWidth` check tells you in a second.
+
+## House rules — decide, don't ask
+
+The most common failure is not a bad build. It is a build that stops every few
+minutes to hand a decision back. Apply these without being asked.
+
+**Make routine calls yourself and report them.** Stop only when getting it wrong
+would be unsafe or unrecoverable. Offering three design options and asking which
+one is not a question — it is the decision, handed back. Pick the one you would
+defend, build it, screenshot it, and note the alternative in one line.
+
+**Never ask about photography. Go and find it.** The client's current site, their
+Flickr, their Google Business profile, their Facebook page. Download what exists,
+self-host it (WebP plus a JPEG fallback), and give every image an explicit
+`object-position` focal point — a centre crop is wrong for most portraits.
+
+**Never put a drawn icon, a grey box or a decorative shape in a slot that means
+to hold a photograph.** A drawn record in a marquee image slot shipped to
+production on the last build and stayed there for five rounds, on two pages,
+because it produced valid HTML and a passing build. Placeholders win by default
+whenever nobody decides — and nobody decides, because a placeholder never fails.
+
+**If there is no usable photography, that is a finding, not a question.** Say it
+in one sentence at the end with what you used instead. Say how old what you found
+is, too: a strip labelled as a rolling social feed, built from an archive where
+every frame is from one day six years ago, is neither rolling nor social.
+
+**Report once, at the end.** Screenshots, what changed, what was decided and why,
+and anything genuinely blocked. Not a running commentary, and not a list of
+questions.
 
 ## The loop
 
