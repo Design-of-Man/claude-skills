@@ -33,6 +33,7 @@ Missing skills are recoverable; a session that won't start is not.
 | `skill-forge` | "make that a skill" — author, publish and install skills end to end |
 | `session-hygiene` | "let's work on Sundial now", "clean up my sessions" |
 | `site-ingest` | "pull their site", "what do they already have" |
+| `resend-forms` | "replace FormSubmit", "form isn't sending", "add a confirmation email", "set up Resend" — lead/RSVP forms that email the office and confirm to the visitor |
 | `skill-scout` | "what should we be using" — find capabilities worth adding |
 
 **Craft**
