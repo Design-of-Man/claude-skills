@@ -85,3 +85,31 @@ a GSC property, or social accounts until confirmed — absent is not zero.
 - **Supabase** — `mcp__Supabase__list_projects`.
 - **Socials** — `list_social_accounts`. Capture the platform and handle, not just the ID,
   since IDs are unstable.
+
+---
+
+## All five client sites at a glance
+
+Portal Supabase project `iiabylugbnmcdzqjenus`, table `clients`, is the live source for
+these IDs. Re-read it if anything here looks stale. Vercel team for all of them:
+`team_VWA1Ar7nCeuyUifvSyeFTT1T` (thedesignofman). Lead sources by date: `leads.md`.
+Click events: `tracking.md`.
+
+| Client | Site | Portal client id | Vercel project | Analytics since | GSC property | GA4 property | Resend domain |
+|---|---|---|---|---|---|---|---|
+| Abacoa Podiatry | jupiterlaser.com | `9ec28713-3aee-41d6-9dc4-7d73ab47d57b` | `prj_Pwe5VY8MRKXbUQSodLSJRmPSVxpe` (abacoapodiatry) | 2026-08-20 | `sc-domain:jupiterlaser.com` | 391066165 | jupiterlaser.com |
+| Elite Sports Medicine | elitesportsmed.org | `bcce54ca-0782-4766-a3e4-4d25e89828be` | `prj_XaeblphUVt7QAKQAQEX1nDxbOyR7` (elite) | 2026-09-12 | `https://elitesportsmed.org/` | measurement id G-1HSFDBS6Q8 (property id not in `clients`) | elitesportsmed.org |
+| RegenOrtho Palm Beach | regenorthopb.com | `42bbbf33-d822-454f-a1ba-adbb14d37414` | `prj_bRwdjB3yeI2WrZpm7qwLIAsOIV2q` (regenortho) | 2026-08-25 | `sc-domain:regenorthopb.com` | 553166520 | regenorthopb.com |
+| First Rehabilitation | firstrehabnpb.com | `2be2ed22-8ae3-4fe1-88c8-279a51bcd911` | `prj_thAY1ZFoahuVCLksBfXAyjyzo1b1` (firstrehabnpb-zywd) | 2026-07-21 | `https://www.firstrehabnpb.com/` | 496300605 | firstrehabnpb.com |
+| Legacy Medical | legacymedicalpalmbeach.com | `0a02bca4-0451-4557-b4a8-259175ca99ea` | `prj_dHD9ppqb39qLJJQ4ymy4ZzQL6wRL` (legacymedical) | not recorded; site live from the 2026-10-19 cutover | `sc-domain:legacymedicalpalmbeach.com` | none recorded | legacymedicalpalmbeach.com |
+
+Search Console data for all five is snapshotted weekly into portal `gsc_snapshots` /
+`gsc_query_rows` / `gsc_page_rows` / `gsc_query_page_rows` (Monday pull). Read those before
+re-querying Google.
+
+**AI-assistant searches show up in Search Console.** Queries that start `site.cdc.gov …`,
+`site.heart.org …`, `site.niddk.nih.gov …`, or are long persona prompts ("i am a 55-64
+year old… my main motivations…") are AI assistants and AI-visibility trackers fetching
+sources. They count as impressions and almost never click. Report them separately (they
+show which pages AI answers draw on, which we want). Never read their low click-through
+as a title problem.

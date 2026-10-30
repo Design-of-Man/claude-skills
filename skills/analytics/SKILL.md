@@ -1,18 +1,20 @@
 ---
 name: analytics
-description: Pull a complete performance picture for a site — website traffic (Vercel), Google rankings (Search Console), social reach (Post Bridge), and leads/applications (Supabase) — into one report. Use whenever someone asks to "run analytics", "run my analytics", "pull the numbers", "how is the site doing", "how are we doing in search", "how did the posts do", "how many leads this month", "monthly report", "traffic report", "did the redesign work", or names a client alongside any of traffic, rankings, reach, or leads. Also use for a single-source ask, so the traps and client IDs stay in one place.
+description: Pull a complete performance picture for a site — website traffic (Vercel), Google rankings (Search Console), social reach (Post Bridge), leads (portal Supabase, First Rehab Supabase, Resend) and on-page clicks (calls, emails, booking clicks) — into one report. Use whenever someone asks to "run analytics", "run my analytics", "pull the numbers", "how is the site doing", "how are we doing in search", "how did the posts do", "how many leads this month", "did the forms work", "how many calls", "pull all analytics", "monthly report", "traffic report", "did the redesign work", or names a client alongside any of traffic, rankings, reach, or leads. Also use for a single-source ask, so the traps and client IDs stay in one place.
 ---
 
 # Analytics
 
-One command, four sources. Never report from one system and imply it is the whole picture.
+One command, several sources. Never report from one system and imply it is the whole picture.
 
 | Source | What it answers | Tooling |
 |---|---|---|
 | **Vercel Web Analytics** | Visitors, pageviews, top pages, referrers | `mcp__Vercel__get_web_analytics` |
 | **Google Search Console** | Impressions, clicks, position, queries | the `search-console` skill |
 | **Post Bridge** | Views, likes, comments, shares per post | `list_analytics` |
-| **Supabase** | Leads and job applications — the money metric | `execute_sql` |
+| **Leads** | The money metric. Spread across portal Supabase (`public.leads`, `lead_events`), First Rehab's `intake_leads`, and **Resend**, and different for each site and date range | `execute_sql`, `mcp__Resend__*`, see `references/leads.md` |
+| **Resend** | Every form email sent since 2026-10-30 (Legacy since 10-19), whether it was delivered, and Legacy's only record of its leads | `get-email-metrics` (by domain), `list-emails` |
+| **On-page clicks** | Phone taps, email clicks, booking clicks, chat leads, as Vercel custom events (mirrored to GA4) | `get_web_analytics` / `count_events`; event names per site in `references/tracking.md` |
 
 Leads are the only source that measures the business rather than the marketing. Lead them.
 
@@ -39,7 +41,17 @@ period read. Read `search-console` before interpreting anything.
 a cached one silently reports the wrong account. Then `list_analytics`, and
 `get_analytics_daily` for per-day detail on a specific post.
 
-**Leads.** Query Supabase directly. Always exclude test rows:
+**Leads.** Read `references/leads.md` first, every time. Each site's leads live in a different
+place for different date ranges, and FormSubmit (most sites until 2026-10-28) kept no copy
+anywhere we can query. Take each site's sources for the requested window from that file,
+and **always** include Resend:
+
+- `mcp__Resend__get-email-metrics` with `dimensions:["domain"]` for the window. Sent,
+  delivered, bounced per site. A bounced *office* notification is an incident; report it
+  first.
+- `mcp__Resend__list-emails` to count office notifications, excluding confirmations, tests,
+  RECOVERED re-sends and spam (rules in `leads.md`). For Legacy this is the lead count.
+- Portal `public.leads`: **counts only**, never row contents. First Rehab's `intake_leads`:
 
 ```sql
 select count(*) from intake_leads
@@ -48,6 +60,10 @@ where coalesce(status,'new') <> 'test'
 ```
 
 Same for `job_applications`. See `references/traps.md` before writing any query.
+
+**Clicks.** Pull each site's call, email, booking and chat events from Vercel using the
+names in `references/tracking.md`. They differ by site. Calls and form leads are separate
+lines; never add them together and call it "leads" without saying so.
 
 ## Step 3 — Report
 
@@ -78,7 +94,8 @@ an outage. Say so immediately instead of retrying — this exact confusion cost 
 
 - **Never mix a partial current month into a month-over-month comparison.** Compare full
   periods, or say explicitly that the current one is partial and N days in.
-- **Exclude `status='test'` from every lead and application count.**
+- **Exclude `status='test'` from every lead and application count**, and TEST / `nicholasbkashuba+` / RECOVERED emails from every Resend count.
+- **For any window before 2026-10-30, say which lead sources exist for it** (`references/leads.md`). A FormSubmit-era gap is missing data, not zero leads.
 - **Vercel data starts on the day analytics was enabled per client** — an earlier window
   is *missing data*, not zero traffic. Never report it as a decline.
 - **Rising average search position is worse.** Say direction in words.
